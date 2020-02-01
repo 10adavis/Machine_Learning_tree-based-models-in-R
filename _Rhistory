@@ -1,0 +1,88 @@
+library(“rpart”)
+library(rpart)
+install.packages(rpart)
+library(rpart)
+install.packages('rpart')
+library(rpart)
+install.packages("rpart")
+creditsub<-read.csv("../Input/credit.csv")
+str(creditsub)
+Credit_model <- rpart(formula = default ~ ., data = creditsub, method = class)
+library(rpart)
+Credit_model <- rpart(formula = default ~ ., data = creditsub, method = class)
+Credit_model <- rpart(formula = default ~ ., data = creditsub, method = "class")
+rpart.plot(x=credit_model, yesno=2, type = 0, extra = 0)
+# Install cran packages
+list.of.packages <- c("rpart","rpart.plot")
+new.packages <- list.of.packages[!(list.of.packages %in% installed.packages()[,"Package"])]
+if(length(new.packages)) install.packages(new.packages)
+library(rpart)
+library(rpart.plot)
+creditsub<-read.csv("../Input/credit.csv")
+str(creditsub)
+Credit_model <- rpart(formula = default ~ ., data = creditsub, method = "class")
+#display the results:
+rpart.plot(x=credit_model, yesno=2, type = 0, extra = 0)
+rpart.plot(x=Credit_model, yesno=2, type = 0, extra = 0)
+# Figure out number of rows in the restaurant data frame
+N <- nrow(restaurant)
+# Total number of rows in the credit data frame
+n <- nrow(credit)
+# Total number of rows in the credit data frame
+n <- nrow(creditsub)
+# Number of rows for the training set (80% of the dataset)
+n_train <- round(0.8 * n)
+# Create a vector of indices which is an 80% random sample
+set.seed(123)
+train_indices <- sample(1:n, n_train)
+# Subset the credit data frame to training indices only
+credit_train <- credit[train_indices, ]
+# Total number of rows in the credit data frame
+n <- nrow(creditsub)
+# Number of rows for the training set (80% of the dataset)
+n_train <- round(0.8 * n)
+# Create a vector of indices which is an 80% random sample
+set.seed(123)
+train_indices <- sample(1:n, n_train)
+# Subset the credit data frame to training indices only
+credit_train <- creditsub[train_indices, ]
+# Exclude the training indices to create the test set
+credit_test <- creditsub[-train_indices, ]
+# Train the model (to predict 'default')
+credit_model <- rpart(formula = default ~.,
+data = credit_train,
+method = "class")
+# Look at the model output
+print(credit_model)
+library(caret)
+install.packages('caret')
+library(caret)
+# Generate predicted classes using the model object
+class_prediction <- predict(object = credit_model,
+newdata = credit_test,
+type = "class")
+# Calculate the confusion matrix for the test set
+confusionMatrix(data = class_prediction,
+reference = credit_test$default)
+install.packages('caret')
+install.packages('e1071')
+library(caret)
+# Generate predicted classes using the model object
+class_prediction <- predict(object = credit_model,
+newdata = credit_test,
+type = "class")
+# Calculate the confusion matrix for the test set
+confusionMatrix(data = class_prediction,
+reference = credit_test$default)
+library(e1071)
+# Generate predicted classes using the model object
+class_prediction <- predict(object = credit_model,
+newdata = credit_test,
+type = "class")
+# Calculate the confusion matrix for the test set
+confusionMatrix(data = class_prediction,
+reference = credit_test$default)
+View(creditsub)
+Credit_model <- rpart(formula = default ~ ., data = creditsub, method = "class")
+#display the results:
+rpart.plot(x=Credit_model, yesno=2, type = 0, extra = 0)
