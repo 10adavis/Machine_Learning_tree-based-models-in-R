@@ -147,7 +147,10 @@ pred2 <- predict(object = credit_model2,
              newdata = credit_test,
              type = "class")
 
-### Compare classification error
+### Load ModelMetrics to calculate classification error
+library(ModelMetrics)
+
+### Compare classification errors
 ce(actual = credit_test$default, 
    predicted = pred1)
 ce(actual = credit_test$default, 
